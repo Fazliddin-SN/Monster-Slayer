@@ -1,0 +1,225 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1b1b1b, #333);
+    color: #fff;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Header Section */
+header {
+    background: #8B0000;
+    width: 100%;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px #000;
+    color: #fff;
+}
+
+/* Game Container */
+#game {
+    background-color: #222;
+    border-radius: 12px;
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    margin-top: 20px;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #f9d423;
+    text-shadow: 1px 1px 3px #000;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ff6347;
+}
+
+/* Health Bar Styling */
+.healthbar {
+    background: #444;
+    height: 25px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px auto 20px;
+    width: 80%;
+    position: relative;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
+}
+.character-image {
+    width: 100px;
+    height: 100px;
+    margin: 10px auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: 3px solid #222;
+    background-color: #fff;
+    transition: transform 0.3s ease-in-out;
+}
+
+.character-image.attack {
+    animation: shake 0.5s;
+}
+
+.character-image.died {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+
+.healthbar_value {
+    height: 100%;
+    background: linear-gradient(to right, #28a745, #00ff00);
+    transition: width 0.3s ease-in-out;
+    border-right: 1px solid #004d00;
+    box-shadow: inset 0 0 10px #000;
+}
+
+/* Monster Health Bar Animation */
+#monster .healthbar_value {
+    background: linear-gradient(to right, #dc3545, #ff0000);
+    box-shadow: inset 0 0 12px #000;
+}
+
+/* Controls Section */
+#controls button {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #8B0000;
+    border: 2px solid #660000;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+#controls button:hover {
+    background: #a60000;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.7);
+}
+
+#controls button:disabled {
+    background: #444;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Game Over Section */
+secttion {
+    margin-top: 20px;
+}
+
+secttion h2,
+secttion h3 {
+    color: #f9d423;
+    text-shadow: 1px 1px 4px #000;
+}
+
+secttion button {
+    margin-top: 10px;
+}
+
+/* Battle Log */
+#log {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#log ul {
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    background: #333;
+    padding: 15px;
+    border: 2px solid #222;
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+#log li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #ddd;
+}
+
+.log--player {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.log--monster {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.log--heal {
+    color: #1e90ff;
+    font-weight: bold;
+}
+
+.log--damage {
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Scrollbar for Log */
+#log ul::-webkit-scrollbar {
+    width: 8px;
+}
+
+#log ul::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 5px;
+}
+
+#log ul::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #ccc;
+}
