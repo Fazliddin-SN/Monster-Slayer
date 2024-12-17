@@ -28,7 +28,7 @@ const app = Vue.createApp({
       return { width: this.playerHealth + "%" };
     },
     mayUsescpecialAttack() {
-      return this.currentRound % 3 !== 0;
+      return this.currentRound % 2 !== 0;
     },
   },
   watch: {
